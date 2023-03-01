@@ -713,7 +713,7 @@ _HTTPRequest_client = new WeakMap(),
     const { url, method, postData, headers } = overrides;
     __classPrivateFieldSet(this, _HTTPRequest_interceptionHandled, true, "f");
     const postDataBinaryBase64 = postData
-      ? Buffer.from(postData).toString("base64")
+      ? btoa(postData)
       : undefined;
     if (this._interceptionId === undefined) {
       throw new Error(
